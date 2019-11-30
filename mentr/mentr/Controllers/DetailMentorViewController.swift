@@ -18,5 +18,8 @@ class DetailMentorViewController: UIViewController {
         newView.nameLabel.text = "Alan Yan"
         newView.facultyLabel.text = "Computer Engineering"
         self.view = newView
+        newView.skillLabel1.text = "Swift/iOS"
+        newView.skillLabel2.text = "Java"
+        newView.skillLabel3.text = "App Dev"
     }
 }
