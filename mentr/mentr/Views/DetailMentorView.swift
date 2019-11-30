@@ -6,7 +6,7 @@
 //  Copyright © 2019 Wren Liang. All rights reserved.
 //
 
-import Foundation
+import UIKit
 class DetailMentorView: UIView {
     override class var requiresConstraintBasedLayout: Bool {
       return true
