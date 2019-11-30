@@ -9,6 +9,10 @@
 import UIKit
 
 class CardView: UIView {
+    
+    var personData: Person?
+    var delegate: SwipeCardsDelegate?
+    
     override class var requiresConstraintBasedLayout: Bool {
       return true
     }
@@ -27,4 +31,17 @@ class CardView: UIView {
     }
     private func setupConstraints() {
     }
+}
+
+protocol SwipeCardsDelegate {
+    func swipeDidEnd(view: CardView)
+}
+
+
+extension CardView: SwipeCardsDelegate {
+    func swipeDidEnd(view: CardView) {
+        <#code#>
+    }
+    
+    
 }

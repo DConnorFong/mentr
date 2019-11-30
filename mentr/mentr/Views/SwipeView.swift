@@ -9,6 +9,14 @@
 import UIKit
 
 class SwipeView: UIView {
+    lazy var stackView: StackWrapperView = {
+        let view = StackWrapperView(frame: self.frame)
+        view.backgroundColor = .blue
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     override class var requiresConstraintBasedLayout: Bool {
       return true
     }
@@ -21,10 +29,16 @@ class SwipeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     func layoutView() {
-        backgroundColor = .white
-
+        backgroundColor = .yellow
+        
+        addSubview(stackView)
+        
         setupConstraints()
     }
     private func setupConstraints() {
+        stackView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
+        stackView.widthAnchor.constraint(equalToConstant: 400).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 400).isActive = true
     }
 }
