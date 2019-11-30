@@ -1,5 +1,5 @@
 //
-//  DetailMentorViewController.swift
+//  NavigationController.swift
 //  mentr
 //
 //  Created by Wren Liang on 2019-11-30.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class DetailMentorViewController: UIViewController {
+class NavigationController: UINavigationController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

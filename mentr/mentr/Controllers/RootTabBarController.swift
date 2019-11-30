@@ -12,8 +12,28 @@ class RootTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //Testing
         self.view.backgroundColor = UIColor.green
+        
+        //MARK: Tabbed Views
+        let firstViewController = SwipeViewController()
+        firstViewController.tabBarItem = UITabBarItem()
+        firstViewController.tabBarItem.title = "SwipeView"
+        firstViewController.tabBarItem.tag = 0
+        firstViewController.tabBarItem.image = UIImage(systemName: "tray.2")
+        
+        let secondViewController = NavigationController(rootViewController: DetailMentorViewController())
+        secondViewController.tabBarItem = UITabBarItem()
+        secondViewController.tabBarItem.title = "Mentor List"
+        secondViewController.tabBarItem.tag = 1
+        secondViewController.tabBarItem.image = UIImage(systemName: "book")
+        
+        let tabBarList = [firstViewController, secondViewController]
+        viewControllers = tabBarList
+        
+        
+        
     }
 
 
