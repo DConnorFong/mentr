@@ -15,12 +15,31 @@ struct Person {
     var university: String
     var skills: [String]
     var bio: String
+    var id: String
     
     //MARK: - Contact
     var facebook: String
     var email: String
     var phoneNum: String
     var wechat: String
+    var linkedin: String
+    
+    
+    init(id: String, name: String, animoji: UIImage, major: majors, university: String, skills: [String], bio: String, facebook: String, email: String, phoneNum: String, wechat: String, linkedin: String) {
+        self.name = name
+        self.animoji = animoji
+        self.major = major
+        self.university = university
+        self.skills = skills
+        self.bio = bio
+        self.facebook = facebook
+        self.email = email
+        self.phoneNum = phoneNum
+        self.wechat = wechat
+        self.id = id
+        self.linkedin = linkedin
+    }
+    
 }
 
 
