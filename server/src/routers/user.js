@@ -3,8 +3,8 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/user/batch/:index/:count', async (req, res) => {
-    const count = req.params.count;
-    const index = req.params.index;
+    const count = parseInt(req.params.count);
+    const index = parseInt(req.params.index);
 
     if (count <= 0) {
         res.status(400).send({
@@ -20,7 +20,7 @@ router.get('/user/batch/:index/:count', async (req, res) => {
         return;
     }
 
-    let endIndex = index + count + 1;
+    let endIndex = index + count;
 
     if (endIndex > mentors.length) {
         endIndex = mentors.length;
