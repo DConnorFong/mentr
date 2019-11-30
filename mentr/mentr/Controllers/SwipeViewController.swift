@@ -8,9 +8,17 @@
 
 import UIKit
 
+
+protocol SwipeCardDataSource {
+    func numberOfCardsToShow() -> Int
+    func cardAt(index: Int) -> CardView
+    func emptyView() -> UIView?
+}
+
 class SwipeViewController: UIViewController {
     var cardDataModels: [Person]?
     
+    var stackWrapper: StackWrapperView?
     
     
 
@@ -22,3 +30,18 @@ class SwipeViewController: UIViewController {
 
 }
 
+extension SwipeViewController: SwipeCardDataSource {
+    func numberOfCardsToShow() -> Int {
+        <#code#>
+    }
+    
+    func cardAt(index: Int) -> CardView {
+        <#code#>
+    }
+    
+    func emptyView() -> UIView? {
+        <#code#>
+    }
+    
+    
+}
