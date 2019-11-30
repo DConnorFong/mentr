@@ -22,6 +22,7 @@
 		6C84A7622392F7810000F583 /* DetailMentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7612392F7810000F583 /* DetailMentorViewController.swift */; };
 		6C84A7642392F7930000F583 /* MentorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7632392F7930000F583 /* MentorListViewController.swift */; };
 		6C84A7662392F9740000F583 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7652392F9740000F583 /* NavigationController.swift */; };
+		90E9CE3B2392FB1A00A6A843 /* MentorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		6C84A7612392F7810000F583 /* DetailMentorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMentorViewController.swift; sourceTree = "<group>"; };
 		6C84A7632392F7930000F583 /* MentorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorListViewController.swift; sourceTree = "<group>"; };
 		6C84A7652392F9740000F583 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				6C84A7572392F7140000F583 /* SwipeView.swift */,
 				6C84A7592392F7230000F583 /* MentorListTableViewCell.swift */,
+				90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */,
 				6C84A75B2392F72C0000F583 /* CardView.swift */,
 				6C84A75D2392F7490000F583 /* DetailMentorView.swift */,
 			);
@@ -201,6 +204,7 @@
 				6C84A7642392F7930000F583 /* MentorListViewController.swift in Sources */,
 				6C84A75C2392F72C0000F583 /* CardView.swift in Sources */,
 				6C84A73F2392F48F0000F583 /* SceneDelegate.swift in Sources */,
+				90E9CE3B2392FB1A00A6A843 /* MentorListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

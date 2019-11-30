@@ -1,13 +1,15 @@
 //
-//  DetailMentorView.swift
+//  MentorListView.swift
 //  mentr
 //
-//  Created by Wren Liang on 2019-11-30.
+//  Created by Stephanie Chen on 2019-11-30.
 //  Copyright © 2019 Wren Liang. All rights reserved.
 //
 
-import Foundation
-class DetailMentorView: UIView {
+import UIKit
+
+class MentorListView: UIView {
+    
     override class var requiresConstraintBasedLayout: Bool {
       return true
     }
@@ -26,4 +28,6 @@ class DetailMentorView: UIView {
     }
     private func setupConstraints() {
     }
+    
+    
 }
