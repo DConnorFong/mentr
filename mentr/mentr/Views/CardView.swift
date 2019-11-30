@@ -10,8 +10,23 @@ import UIKit
 
 class CardView: UIView {
     
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView(frame: self.frame)
+        imageView.image = UIImage(named: "head-1")
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        return imageView
+    }()
+    
     var personData: Person?
     var delegate: SwipeCardsDelegate?
+    
+    var dataSource: Person? {
+        didSet {
+            //update view information on this view
+        }
+    }
     
     override class var requiresConstraintBasedLayout: Bool {
       return true
@@ -26,10 +41,16 @@ class CardView: UIView {
     }
     func layoutView() {
         backgroundColor = .white
+        
+        self.addSubview(imageView)
 
         setupConstraints()
     }
     private func setupConstraints() {
+        imageView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
 }
 
@@ -40,7 +61,7 @@ protocol SwipeCardsDelegate {
 
 extension CardView: SwipeCardsDelegate {
     func swipeDidEnd(view: CardView) {
-        <#code#>
+        //
     }
     
     

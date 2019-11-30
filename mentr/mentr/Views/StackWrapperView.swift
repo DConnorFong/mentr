@@ -12,6 +12,11 @@ class StackWrapperView: UIView {
     var remainingCards: Int = 0
     var numVisibleCards: Int = 3
     
+    var viewsOnStack: [CardView] = []
+    
+    let horizontalInset: CGFloat = 10.0
+    let verticalInset: CGFloat = 10.0
+    
     var swipeDataSource: SwipeCardDataSource? {
         didSet {
             reloadData()
@@ -23,15 +28,32 @@ class StackWrapperView: UIView {
         numCardsToShow = swipeDataSource.numberOfCardsToShow()
         remainingCards = numCardsToShow
         
-        for i in 0...min(numCardsToShow, numVisibleCards) {
-            
+        setNeedsLayout()
+        layoutIfNeeded()
+        
+        for i in 0..<min(numCardsToShow, numVisibleCards) {
+            addCardView(card: swipeDataSource.cardAt(index: i), index: i)
         }
     }
     
     private func addCardView(card: CardView, index: Int) {
         card.delegate = self
+        addCardFrame(index: index, cardView: card)
+        viewsOnStack.append(card)
+        insertSubview(card, at: 0)
+        remainingCards -= 1
+    }
+    
+    func addCardFrame(index: Int, cardView: CardView) {
+        var cardViewFrame = bounds
+        let horizontalInset = (CGFloat(index) * self.horizontalInset)
+        let verticalInset = CGFloat(index) * self.verticalInset
         
+        cardViewFrame.size.width -= 2 * horizontalInset
+        cardViewFrame.origin.x += horizontalInset
+        cardViewFrame.origin.y += verticalInset
         
+        cardView.frame = cardViewFrame
     }
     
     override class var requiresConstraintBasedLayout: Bool {
@@ -61,7 +83,7 @@ class StackWrapperView: UIView {
 
 extension StackWrapperView: SwipeCardsDelegate {
     func swipeDidEnd(view: CardView) {
-        <#code#>
+        //
     }
     
     

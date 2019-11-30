@@ -9,7 +9,10 @@
 import UIKit
 
 class SwipeViewController: UIViewController {
-    var personDataArray: [Person]?
+    var personDataArray: [Person] = [
+        Person(id: "1", name: "Wren", animoji: UIImage(named: "head-1")!, major: majors.cpen, university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin"),
+        Person(id: "2", name: "Alan", animoji: UIImage(named: "head-1")!, major: majors.cpen, university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin"),
+        Person(id: "3", name: "Stephanie", animoji: UIImage(named: "head-1")!, major: majors.cpen, university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin")]
     var myView: SwipeView!
     
     override func loadView() {
@@ -27,17 +30,6 @@ class SwipeViewController: UIViewController {
         
     }
     
-    /*
-    func setupStackView() {
-        stackView!.translatesAutoresizingMaskIntoConstraints = false
-        stackView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView!.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -60).isActive = true
-        stackView!.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        stackView!.heightAnchor.constraint(equalToConstant: 400).isActive = true
-    }
-    */
-    
-
 
 }
 
@@ -52,12 +44,12 @@ protocol SwipeCardDataSource {
 
 extension SwipeViewController: SwipeCardDataSource {
     func numberOfCardsToShow() -> Int {
-        return 0 //change to return personDataArray.count
+        return personDataArray.count
     }
     
     func cardAt(index: Int) -> CardView {
         let card = CardView()
-        card.personData = personDataArray![index]
+        card.personData = personDataArray[index]
         return card
     }
     
