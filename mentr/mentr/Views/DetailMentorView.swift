@@ -19,16 +19,21 @@ class DetailMentorView: UIView {
     }()
     lazy var nameLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     lazy var schoolLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     lazy var facultyLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 16)
+        label.textColor = .blue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -97,17 +102,24 @@ class DetailMentorView: UIView {
     }()
     lazy var skillLabel1:UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+
         return label
     }()
     lazy var skillLabel2:UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
         return label
     }()
     lazy var skillLabel3:UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
         return label
     }()
         
@@ -194,18 +206,18 @@ class DetailMentorView: UIView {
         
         let size: CGFloat = 300
         skillsView1.widthAnchor.constraint(equalToConstant: size/3.2).isActive = true
-        skillsView1.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor).isActive = true
+        skillsView1.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 10).isActive = true
         skillsView1.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
         skillsView1.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         skillsView2.widthAnchor.constraint(equalToConstant: size/3.2).isActive = true
-        skillsView2.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor).isActive = true
+        skillsView2.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 10).isActive = true
         skillsView2.leftAnchor.constraint(equalTo: skillsView1.rightAnchor, constant: 10).isActive = true
         skillsView2.heightAnchor.constraint(equalToConstant: 30).isActive = true
 
     
         skillsView3.widthAnchor.constraint(equalToConstant: size/3.2).isActive = true
-        skillsView3.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor).isActive = true
+        skillsView3.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 10).isActive = true
         skillsView3.leftAnchor.constraint(equalTo: skillsView2.rightAnchor, constant: 10).isActive = true
         skillsView3.heightAnchor.constraint(equalToConstant: 30).isActive = true
 

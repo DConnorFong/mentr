@@ -10,9 +10,16 @@ import UIKit
 
 class RootTabBarController: UITabBarController {
 
+    var apiButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 100))
+        button.backgroundColor = .red
+        button.addTarget(self, action: #selector(testAPICall), for: .touchUpInside)
+        button.setTitle("API CALL", for: .normal)
+        return button
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.addSubview(apiButton)
         //Testing
         self.view.backgroundColor = UIColor.green
         
@@ -35,7 +42,20 @@ class RootTabBarController: UITabBarController {
         
         
     }
-
+    
+    @objc func testAPICall() {
+        let url = URL(string: "http://ec2-18-222-96-240.us-east-2.compute.amazonaws.com/user/batch/0/150")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print(error)
+            } else if let inData = data {
+                let json = try? JSONSerialization.jsonObject(with: inData, options: [])
+                print(json)
+            }
+        }
+        task.resume()
+        
+    }
 
 }
 

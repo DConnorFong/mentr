@@ -10,13 +10,16 @@ import UIKit
 
 class DetailMentorViewController: UIViewController {
     var mentor: Person?
+    var color: UIColor?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let newView = DetailMentorView()
+        newView.backgroundColor = color
         newView.personImage.image = UIImage(named: "head-1") //CHNAGE THIS TO PERSON LATER
         newView.nameLabel.text = "Alan Yan"
         newView.facultyLabel.text = "Computer Engineering"
+        newView.schoolLabel.text = "University of British Columbia"
         self.view = newView
         newView.skillLabel1.text = "Swift/iOS"
         newView.skillLabel2.text = "Java"
