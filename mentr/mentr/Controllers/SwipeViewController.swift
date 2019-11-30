@@ -9,6 +9,10 @@
 import UIKit
 
 class SwipeViewController: UIViewController {
+    var cardDataModels: [Person]?
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
