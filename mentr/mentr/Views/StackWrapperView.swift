@@ -14,6 +14,10 @@ class StackWrapperView: UIView {
     
     var viewsOnStack: [CardView] = []
     
+    var visibleCards: [CardView] {
+        return subviews as? [CardView] ?? []
+    }
+    
     let horizontalInset: CGFloat = 10.0
     let verticalInset: CGFloat = 10.0
     
@@ -81,10 +85,34 @@ class StackWrapperView: UIView {
 }
 
 
+protocol SwipeCardsDelegate {
+    func swipeDidEnd(view: CardView)
+}
+
 extension StackWrapperView: SwipeCardsDelegate {
     func swipeDidEnd(view: CardView) {
-        //
+        guard let dataSource = swipeDataSource else { return }
+        view.removeFromSuperview()
+
+        if remainingCards > 0 {
+            let newIndex = dataSource.numberOfCardsToShow() - remainingCards
+            addCardView(card: dataSource.cardAt(index: newIndex), index: 2)
+            for (cardIndex, cardView) in visibleCards.reversed().enumerated() {
+                UIView.animate(withDuration: 0.2, animations: {
+                cardView.center = self.center
+                  self.addCardFrame(index: cardIndex, cardView: cardView)
+                    self.layoutIfNeeded()
+                })
+            }
+
+        }else {
+            for (cardIndex, cardView) in visibleCards.reversed().enumerated() {
+                UIView.animate(withDuration: 0.2, animations: {
+                    cardView.center = self.center
+                    self.addCardFrame(index: cardIndex, cardView: cardView)
+                    self.layoutIfNeeded()
+                })
+            }
+        }
     }
-    
-    
 }

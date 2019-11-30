@@ -39,7 +39,7 @@ class SwipeView: UIView {
     private func setupConstraints() {
         stackView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
         stackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
-        stackView.widthAnchor.constraint(equalToConstant: 400).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        stackView.widthAnchor.constraint(equalToConstant: 350).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
     }
 }
