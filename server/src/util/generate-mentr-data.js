@@ -55,7 +55,18 @@ const interest = [
     'Volunteer Work',
 ];
 
-const major = ['Arts', 'Commerce', 'Computer Science', 'Engineering', 'Land and Food Systems', 'Music', 'Science'];
+const faculty = ['Arts', 'Commerce', 'Engineering', 'Forestry', 'Land and Food Systems', 'Science'];
+
+const major = [
+    'Biomedical Engineering',
+    'Chemical Engineering',
+    'Civil Engineering',
+    'Electrical and Computer Engineering',
+    'Engineering Physics',
+    'Integrated Engineering',
+    'Materials Engineering',
+    'Mining Engineering',
+];
 
 const university = [
     'University of British Columbia',
@@ -68,14 +79,19 @@ const university = [
 const generateMentrData = (startIndex, count) => {
     const data = [];
 
-    // TODO FB and interests
     for (i = startIndex; i <= startIndex + count; i++) {
         const curr = {};
         curr.id = i;
         curr.firstName = Faker.name.firstName();
         curr.lastName = Faker.name.lastName();
         curr.year = Faker.random.number({ min: 1, max: 5 });
-        curr.major = Faker.random.arrayElement(major);
+        curr.faculty = Faker.random.arrayElement(faculty);
+
+        // TODO implement for non-engineering faculties
+        if (curr.faculty === 'Engineering') {
+            curr.major = Faker.random.arrayElement(major);
+        }
+
         curr.university = Faker.random.arrayElement(university);
         curr.email = Faker.internet.email(curr.firstName.toLowerCase(), curr.lastName.toLowerCase());
         curr.phone = Faker.phone.phoneNumberFormat(1).split('x')[0];
@@ -90,7 +106,7 @@ const generateMentrData = (startIndex, count) => {
             currInterests.push(Faker.random.arrayElement(interest));
         }
         curr.interests = currInterests;
-        curr.bio = `${Faker.random.arrayElement(greeting)} I am ${curr.firstName}, I study ${curr.major} at ${
+        curr.bio = `${Faker.random.arrayElement(greeting)} I am ${curr.firstName}, I study ${curr.faculty} at ${
             curr.university
         }.`;
 
