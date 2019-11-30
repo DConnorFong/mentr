@@ -30,18 +30,18 @@ class SwipeViewController: UIViewController {
 
 }
 
-extension SwipeViewController: SwipeCardDataSource {
-    func numberOfCardsToShow() -> Int {
-        <#code#>
-    }
-    
-    func cardAt(index: Int) -> CardView {
-        <#code#>
-    }
-    
-    func emptyView() -> UIView? {
-        <#code#>
-    }
-    
-    
-}
+//extension SwipeViewController: SwipeCardDataSource {
+////    func numberOfCardsToShow() -> Int {
+////        <#code#>
+////    }
+////
+////    func cardAt(index: Int) -> CardView {
+////        <#code#>
+////    }
+////
+////    func emptyView() -> UIView? {
+////        <#code#>
+////    }
+//    
+//    
+//}

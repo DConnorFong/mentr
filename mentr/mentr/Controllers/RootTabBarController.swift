@@ -23,7 +23,7 @@ class RootTabBarController: UITabBarController {
         firstViewController.tabBarItem.tag = 0
         firstViewController.tabBarItem.image = UIImage(systemName: "tray.2")
         
-        let secondViewController = NavigationController(rootViewController: DetailMentorViewController())
+        let secondViewController = NavigationController(rootViewController: MentorListViewController())
         secondViewController.tabBarItem = UITabBarItem()
         secondViewController.tabBarItem.title = "Mentor List"
         secondViewController.tabBarItem.tag = 1

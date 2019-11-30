@@ -9,7 +9,7 @@
 import UIKit
 
 class MentorListViewController: UIViewController {
-    
+    var mentors: [Person] = []
     var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -20,11 +20,11 @@ class MentorListViewController: UIViewController {
         self.view = newView
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Pantry"
+        navigationItem.title = "Connected Mentors"
         tableView.dataSource = self
         tableView.delegate = self
         
-        //tableView.register(MentorListTableViewCell.self, forCellReuseIdentifier: "MentorCell")
+        tableView.register(MentorListTableViewCell.self, forCellReuseIdentifier: "MentorCell")
         tableView.separatorStyle = .none
     }
 }
@@ -33,6 +33,9 @@ extension MentorListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
@@ -40,18 +43,20 @@ extension MentorListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MentorCell", for: indexPath)
         
-        guard let pantryCell = cell as? MentorListTableViewCell else {
+        guard let mentorCell = cell as? MentorListTableViewCell else {
             return cell
         }
-
+        mentorCell.selectionStyle = .none
         
-        return pantryCell
+        return mentorCell
     }
     
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       //TODO: PUSH SHIT
+        let pushVC = DetailMentorViewController()
+//        pushVC.mentor = mentors[indexPath.row]
+        navigationController?.pushViewController(pushVC, animated: true)
     }
     
 }
