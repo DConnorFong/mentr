@@ -22,6 +22,13 @@ class SwipeView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    lazy var leftArrow: UIImageView = {
+        let view = UIImageView()
+        
+        
+        return view
+    }()
 
     override class var requiresConstraintBasedLayout: Bool {
       return true
