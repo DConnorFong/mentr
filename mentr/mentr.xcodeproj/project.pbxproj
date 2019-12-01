@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25D8709C2393408600D3049F /* ModalPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D8709B2393408600D3049F /* ModalPopUpViewController.swift */; };
+		25D8709E239340B700D3049F /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D8709D239340B700D3049F /* ModalView.swift */; };
 		6C84A73D2392F48F0000F583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A73C2392F48F0000F583 /* AppDelegate.swift */; };
 		6C84A73F2392F48F0000F583 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A73E2392F48F0000F583 /* SceneDelegate.swift */; };
 		6C84A7412392F48F0000F583 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7402392F48F0000F583 /* RootTabBarController.swift */; };
@@ -21,9 +23,18 @@
 		6C84A7602392F7620000F583 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A75F2392F7620000F583 /* MatchViewController.swift */; };
 		6C84A7622392F7810000F583 /* DetailMentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7612392F7810000F583 /* DetailMentorViewController.swift */; };
 		6C84A7642392F7930000F583 /* MentorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7632392F7930000F583 /* MentorListViewController.swift */; };
+		6C84A7662392F9740000F583 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7652392F9740000F583 /* NavigationController.swift */; };
+		6C84A7682392FEAD0000F583 /* StackWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7672392FEAD0000F583 /* StackWrapperView.swift */; };
+		6C84A76A239331240000F583 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A769239331240000F583 /* Colors.swift */; };
+		6C84A76C239342C10000F583 /* APICallData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A76B239342C10000F583 /* APICallData.swift */; };
+		90E9CE3B2392FB1A00A6A843 /* MentorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */; };
+		90E9CE3F2393381100A6A843 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9CE3E2393381100A6A843 /* SettingsViewController.swift */; };
+		90E9CE412393381C00A6A843 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9CE402393381C00A6A843 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25D8709B2393408600D3049F /* ModalPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPopUpViewController.swift; sourceTree = "<group>"; };
+		25D8709D239340B700D3049F /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		6C84A7392392F48F0000F583 /* mentr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mentr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C84A73C2392F48F0000F583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C84A73E2392F48F0000F583 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +51,13 @@
 		6C84A75F2392F7620000F583 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		6C84A7612392F7810000F583 /* DetailMentorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMentorViewController.swift; sourceTree = "<group>"; };
 		6C84A7632392F7930000F583 /* MentorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorListViewController.swift; sourceTree = "<group>"; };
+		6C84A7652392F9740000F583 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		6C84A7672392FEAD0000F583 /* StackWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackWrapperView.swift; sourceTree = "<group>"; };
+		6C84A769239331240000F583 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		6C84A76B239342C10000F583 /* APICallData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallData.swift; sourceTree = "<group>"; };
+		90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorListView.swift; sourceTree = "<group>"; };
+		90E9CE3E2393381100A6A843 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		90E9CE402393381C00A6A843 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +106,13 @@
 			isa = PBXGroup;
 			children = (
 				6C84A7572392F7140000F583 /* SwipeView.swift */,
-				6C84A7592392F7230000F583 /* MentorListTableViewCell.swift */,
+				6C84A7672392FEAD0000F583 /* StackWrapperView.swift */,
 				6C84A75B2392F72C0000F583 /* CardView.swift */,
+				90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */,
+				6C84A7592392F7230000F583 /* MentorListTableViewCell.swift */,
 				6C84A75D2392F7490000F583 /* DetailMentorView.swift */,
+				90E9CE402393381C00A6A843 /* SettingsView.swift */,
+				25D8709D239340B700D3049F /* ModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				6C84A7552392F6EE0000F583 /* Person.swift */,
+				6C84A769239331240000F583 /* Colors.swift */,
+				6C84A76B239342C10000F583 /* APICallData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,11 +130,14 @@
 		6C84A7542392F69C0000F583 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6C84A7652392F9740000F583 /* NavigationController.swift */,
+				25D8709B2393408600D3049F /* ModalPopUpViewController.swift */,
 				6C84A7402392F48F0000F583 /* RootTabBarController.swift */,
 				6C84A7422392F48F0000F583 /* SwipeViewController.swift */,
 				6C84A75F2392F7620000F583 /* MatchViewController.swift */,
 				6C84A7612392F7810000F583 /* DetailMentorViewController.swift */,
 				6C84A7632392F7930000F583 /* MentorListViewController.swift */,
+				90E9CE3E2393381100A6A843 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,18 +212,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D8709C2393408600D3049F /* ModalPopUpViewController.swift in Sources */,
+				6C84A76C239342C10000F583 /* APICallData.swift in Sources */,
 				6C84A7562392F6EE0000F583 /* Person.swift in Sources */,
 				6C84A7432392F48F0000F583 /* SwipeViewController.swift in Sources */,
 				6C84A7412392F48F0000F583 /* RootTabBarController.swift in Sources */,
 				6C84A7582392F7140000F583 /* SwipeView.swift in Sources */,
 				6C84A7602392F7620000F583 /* MatchViewController.swift in Sources */,
+				90E9CE412393381C00A6A843 /* SettingsView.swift in Sources */,
 				6C84A73D2392F48F0000F583 /* AppDelegate.swift in Sources */,
 				6C84A75E2392F7490000F583 /* DetailMentorView.swift in Sources */,
+				90E9CE3F2393381100A6A843 /* SettingsViewController.swift in Sources */,
 				6C84A75A2392F7230000F583 /* MentorListTableViewCell.swift in Sources */,
+				6C84A7662392F9740000F583 /* NavigationController.swift in Sources */,
+				6C84A76A239331240000F583 /* Colors.swift in Sources */,
 				6C84A7622392F7810000F583 /* DetailMentorViewController.swift in Sources */,
+				25D8709E239340B700D3049F /* ModalView.swift in Sources */,
 				6C84A7642392F7930000F583 /* MentorListViewController.swift in Sources */,
+				6C84A7682392FEAD0000F583 /* StackWrapperView.swift in Sources */,
 				6C84A75C2392F72C0000F583 /* CardView.swift in Sources */,
 				6C84A73F2392F48F0000F583 /* SceneDelegate.swift in Sources */,
+				90E9CE3B2392FB1A00A6A843 /* MentorListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +371,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y9DB8JZGV;
 				INFOPLIST_FILE = mentr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,6 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y9DB8JZGV;
 				INFOPLIST_FILE = mentr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
