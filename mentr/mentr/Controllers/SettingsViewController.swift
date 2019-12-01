@@ -23,11 +23,11 @@ class SettingsViewController: UIViewController {
 
         self.view = newView
         
-        let testModal = ModalPopUpViewController()
-        
-        self.present(testModal, animated: true) {
-            print("presented")
-        }
+//        let testModal = ModalPopUpViewController()
+//        
+//        self.present(testModal, animated: true) {
+//            print("presented")
+//        }
     }
     
     @objc func checkMarkTapped(_ sender: UIButton) {
