@@ -64,10 +64,11 @@ class SwipeView: UIView {
     }
     
     private func setupConstraints() {
-        stackView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
-        stackView.widthAnchor.constraint(equalToConstant: 350).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: leftArrow.topAnchor, constant: -50).isActive = true
+        stackView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 20).isActive = true
+
         
         headerLabel.leftAnchor.constraint(equalTo: leftAnchor, constant:30).isActive = true
         headerLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant:40).isActive = true

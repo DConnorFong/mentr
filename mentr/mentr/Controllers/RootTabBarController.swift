@@ -27,6 +27,9 @@ class RootTabBarController: UITabBarController {
         
         return button
     }()
+    override func viewWillAppear(_ animated: Bool) {
+        self.selectedIndex = 2
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(apiButton)
@@ -71,7 +74,7 @@ class RootTabBarController: UITabBarController {
         apiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         apiButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
         apiButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        apiButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90).isActive = true
+        apiButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -110).isActive = true
 
     }
     
