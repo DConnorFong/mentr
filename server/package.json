@@ -1,0 +1,24 @@
+{
+    "name": "mentr",
+    "version": "1.0.0",
+    "description": "Helping connect inspired high school students with university level mentors",
+    "main": "service.js",
+    "scripts": {
+        "start": "node src/service.js",
+        "dev": "nodemon src/service.js"
+    },
+    "keywords": [],
+    "author": "Connor Fong",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DConnorFong/mentr"
+    },
+    "dependencies": {
+        "express": "^4.16.4",
+        "faker": "^4.1.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.9"
+    }
+}

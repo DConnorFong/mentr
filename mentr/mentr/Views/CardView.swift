@@ -274,7 +274,7 @@ class CardView: UIView {
             // --- Case: gesture ended --- //
             case .ended:
                 //swiped past right threshold
-                if (card.center.x) > 40 {
+                if (card.center.x) > 25 {
                     print("right")
                     delegate?.swipeDidEnd(view: card)
                     UIView.animate(withDuration: 0.2) {
@@ -292,7 +292,7 @@ class CardView: UIView {
                 }
                     
                 //swiped past left threshold
-                } else if card.center.x < -40 {
+                } else if card.center.x < -25 {
                     print("left")
                     delegate?.swipeDidEnd(view: card)
                     UIView.animate(withDuration: 0.2) {
