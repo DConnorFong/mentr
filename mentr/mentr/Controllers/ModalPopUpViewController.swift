@@ -10,5 +10,17 @@ import UIKit
 
 
 class ModalPopUpViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let newView = ModalView()
+        newView.doneButton.addTarget(self, action: #selector(closeView), for: .touchUpInside)
+        self.view = newView
+    }
     
+    @objc func closeView() {
+        dismiss(animated: true) {
+            print("closed")
+        }
+    }
 }
