@@ -47,6 +47,10 @@ class StackWrapperView: UIView {
     
     private func addCardView(card: CardView, index: Int) {
         card.delegate = self
+        
+        if let modal = modalDelegate {
+            card.modalDelegate = modal
+        }
 
         addCardFrame(index: index, cardView: card)
         viewsOnStack.append(card)

@@ -22,6 +22,7 @@ class SwipeViewController: UIViewController {
     var serverDataArray: People? {
         didSet {
             myView.stackView.swipeDataSource = self
+            myView.stackView.modalDelegate = self
         }
     }
     var myView: SwipeView!
@@ -90,6 +91,10 @@ protocol ModalDelegate {
 
 extension SwipeViewController: ModalDelegate {
     func sendPerson(person: ServerPerson) {
-        //
+        print("sending person")
+        let modalView = ModalPopUpViewController()
+        modalView.selectedPerson = person
+        
+        self.present(modalView, animated: true)
     }
 }

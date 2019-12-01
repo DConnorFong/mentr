@@ -106,7 +106,11 @@ class CardView: UIView {
     
     var delegate: SwipeCardsDelegate?
     
-    var modalDelegate: ModalDelegate?
+    var modalDelegate: ModalDelegate? {
+        didSet {
+            print("hello parent")
+        }
+    }
     
     var dataSource: ServerPerson? {
         didSet {
@@ -272,9 +276,11 @@ class CardView: UIView {
                         card.center = CGPoint(x: centerOfParentContainer.x + point.x + 200, y: centerOfParentContainer.y + point.y + 75)
                      card.alpha = 0
                      self.layoutIfNeeded()
-                     let modalView = ModalPopUpViewController()
-                        modalView.selectedPerson = self.dataSource
                         
+                        if let person = self.dataSource {
+                            self.modalDelegate?.sendPerson(person: person)
+                        }
+                     
                         
                 }
                     
