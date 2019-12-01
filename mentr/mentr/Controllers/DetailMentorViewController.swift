@@ -15,20 +15,12 @@ class DetailMentorViewController: UIViewController {
         super.viewDidLoad()
         let newView = DetailMentorView()
         newView.backgroundColor = color
-//        newView.personImage.image = UIImage(named: "head-1") //CHNAGE THIS TO PERSON LATER
-//        newView.nameLabel.text = "Alan Yan"
-//        newView.facultyLabel.text = "Computer Engineering"
-//        newView.schoolLabel.text = "University of British Columbia"
-//        self.view = newView
-//        newView.skillLabel1.text = "Swift/iOS"
-//        newView.skillLabel2.text = "Java"
-//        newView.skillLabel3.text = "App Dev"
         
         let number = mentor!.id % 10 + 1
         newView.personImage.image = UIImage(named: "mentr\(number)")
         newView.nameLabel.text = "\(mentor!.firstName) \(mentor!.lastName)"
-        newView.facultyLabel.text = "\(mentor!.faculty)"
-        newView.schoolLabel.text = "\(mentor!.university)"
+        newView.facultyLabel.text =  mentor!.faculty.rawValue
+        newView.schoolLabel.text = mentor!.university.rawValue
         newView.skillLabel1.text = mentor!.interests[0]
         newView.skillLabel2.text = mentor!.interests[1]
         newView.skillLabel3.text = mentor!.interests[2]
@@ -38,6 +30,18 @@ class DetailMentorViewController: UIViewController {
     }
     
     @objc func clickedFacebook() {
-        
+        if let url = URL(string: "http://\(mentor!.facebook)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    @objc func email() {
+        if let url = URL(string: "http://\(mentor!.email)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    @objc func phone() {
+        if let url = URL(string: "http://\(mentor!.phone)") {
+            UIApplication.shared.open(url)
+        }
     }
 }

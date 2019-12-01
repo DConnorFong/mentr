@@ -58,7 +58,7 @@ extension MentorListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         mentorCell.contentView.backgroundColor = colours[indexPath.row%4]
         mentorCell.nameLabel.text = "\(mentors[indexPath.row].firstName) \(mentors[indexPath.row].lastName)"
-        mentorCell.facultyLabel.text = "\(mentors[indexPath.row].faculty)"
+        mentorCell.facultyLabel.text = mentors[indexPath.row].faculty.rawValue
         let number = mentors[indexPath.row].id%10+1
         mentorCell.personImage.image = UIImage(named: "mentr\(number)")
         mentorCell.selectionStyle = .none

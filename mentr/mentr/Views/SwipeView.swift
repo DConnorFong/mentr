@@ -15,6 +15,13 @@ class SwipeView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    lazy var headerLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 36)
+        label.text = "Find Mentors"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     override class var requiresConstraintBasedLayout: Bool {
       return true
@@ -30,6 +37,7 @@ class SwipeView: UIView {
     func layoutView() {
         backgroundColor = .white
         addSubview(stackView)
+        addSubview(headerLabel)
         
         setupConstraints()
     }
@@ -39,5 +47,9 @@ class SwipeView: UIView {
         stackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: 350).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        
+        headerLabel.leftAnchor.constraint(equalTo: leftAnchor, constant:30).isActive = true
+        headerLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant:40).isActive = true
+
     }
 }
