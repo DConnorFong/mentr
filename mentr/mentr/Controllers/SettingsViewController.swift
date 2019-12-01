@@ -14,6 +14,6 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         let newView = SettingsView()
         
-        self.view = view
+        self.view = newView
     }
 }

@@ -12,6 +12,7 @@ class SettingsView: UIView {
     lazy var settingsLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Futura-Bold", size: 36)
+        label.text = "My Profile"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -26,6 +27,7 @@ class SettingsView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "Futura-Bold", size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Stephanie Chen"
         return label
     }()
    lazy var facultyLabel: UILabel = {
@@ -33,6 +35,7 @@ class SettingsView: UIView {
        label.font = UIFont(name: "Futura-Bold", size: 16)
        label.textColor = .blue
        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Faculty Of Interest: Engineering"
        return label
    }()
     
@@ -41,6 +44,14 @@ class SettingsView: UIView {
         button.layer.cornerRadius = 20
         return button
     }()
+    
+    lazy var backView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = Colors().colorMap["orange"]
+        view.layer.cornerRadius = 20
+        return view
+    }()
 
        
    override class var requiresConstraintBasedLayout: Bool {
@@ -48,7 +59,7 @@ class SettingsView: UIView {
    }
    override init(frame: CGRect) {
        super.init(frame: frame)
-       
+    backgroundColor = .white
        layoutView()
    }
    required init?(coder: NSCoder) {
@@ -56,6 +67,7 @@ class SettingsView: UIView {
    }
    func layoutView() {
         addSubview(settingsLabel)
+        addSubview(backView)
         addSubview(personImage)
         addSubview(nameLabel)
         addSubview(facultyLabel)
@@ -63,13 +75,22 @@ class SettingsView: UIView {
         setupConstraints()
    }
     func setupConstraints() {
-        settingsLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        settingsLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        settingsLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        settingsLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
         
         personImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        personImage.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 20).isActive = true
+        personImage.topAnchor.constraint(equalTo: settingsLabel.bottomAnchor, constant: 30).isActive = true
         personImage.heightAnchor.constraint(equalToConstant: 260).isActive = true
         personImage.widthAnchor.constraint(equalToConstant: 260).isActive = true
-
+        
+        backView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width-40).isActive = true
+        backView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        backView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        backView.centerYAnchor.constraint(equalTo: personImage.centerYAnchor).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: personImage.bottomAnchor, constant: 35).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        nameLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width-40).isActive = true
+        facultyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10).isActive = true
+        facultyLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
     }
 }
