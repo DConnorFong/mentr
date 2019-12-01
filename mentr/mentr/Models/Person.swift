@@ -12,6 +12,7 @@ struct Person {
     var name: String
     var animoji: UIImage?
     var major: majors
+    var faculty: String
     var university: String
     var skills: [String]
     var bio: String
@@ -25,10 +26,11 @@ struct Person {
     var linkedin: String
     
     
-    init(id: String, name: String, animoji: UIImage, major: majors, university: String, skills: [String], bio: String, facebook: String, email: String, phoneNum: String, wechat: String, linkedin: String) {
+    init(id: String, name: String, animoji: UIImage, major: majors, faculty: String, university: String, skills: [String], bio: String, facebook: String, email: String, phoneNum: String, wechat: String, linkedin: String) {
         self.name = name
         self.animoji = animoji
         self.major = major
+        self.faculty = faculty
         self.university = university
         self.skills = skills
         self.bio = bio

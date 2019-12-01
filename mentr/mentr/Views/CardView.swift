@@ -12,24 +12,104 @@
 import UIKit
 
 class CardView: UIView {
-    
+    //MARK: - Subviews
     lazy var imageView: UIImageView = {
         let imageView = UIImageView(frame: self.frame)
-        imageView.image = UIImage(named: "head-1")
+        imageView.image = nil
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         return imageView
     }()
     
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 24)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    lazy var schoolLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    lazy var facultyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 16)
+        label.textColor = .blue
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var descriptionView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        return view
+    }()
+    lazy var skillsView1: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    lazy var skillsView2: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .yellow
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    lazy var skillsView3: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .green
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    lazy var skillLabel1:UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+
+        return label
+    }()
+    lazy var skillLabel2:UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
+    }()
+    lazy var skillLabel3:UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Futura-Bold", size: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
+    }()
+    
+    
     var divisor: CGFloat = 0.0
     
-    var personData: Person?
     var delegate: SwipeCardsDelegate?
     
     var dataSource: Person? {
         didSet {
-            //update view information on this view
+            print("didset datasource")
+            imageView.image = dataSource?.animoji
+
+            nameLabel.text = dataSource?.name
+            facultyLabel.text = dataSource?.faculty
+            schoolLabel.text = dataSource?.university
+            skillLabel1.text = dataSource?.skills[0]
+            skillLabel2.text = dataSource?.skills[1]
+            skillLabel3.text = dataSource?.skills[2]
         }
     }
     
@@ -49,6 +129,18 @@ class CardView: UIView {
         backgroundColor = .white
         
         self.addSubview(imageView)
+        self.addSubview(descriptionView)
+        
+        descriptionView.addSubview(nameLabel)
+        descriptionView.addSubview(schoolLabel)
+        descriptionView.addSubview(facultyLabel)
+        descriptionView.addSubview(skillsView1)
+        descriptionView.addSubview(skillsView2)
+        descriptionView.addSubview(skillsView3)
+        
+        skillsView1.addSubview(skillLabel1)
+        skillsView2.addSubview(skillLabel2)
+        skillsView3.addSubview(skillLabel3)
 
         setupConstraints()
     }
@@ -62,10 +154,58 @@ class CardView: UIView {
         
         
         //Children Setup
-        imageView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        imageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
+        
+        
+        //From Alan
+        descriptionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        descriptionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        descriptionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
+        descriptionView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
+
+        nameLabel.topAnchor.constraint(equalTo: descriptionView.topAnchor, constant: 10).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
+
+        facultyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10).isActive = true
+        facultyLabel.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
+
+        schoolLabel.topAnchor.constraint(equalTo: facultyLabel.bottomAnchor, constant: 10).isActive = true
+        schoolLabel.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
+
+        let size: CGFloat = 300
+        skillsView1.widthAnchor.constraint(equalToConstant: size/3.2).isActive = true
+        skillsView1.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 10).isActive = true
+        skillsView1.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
+        skillsView1.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
+        skillsView2.widthAnchor.constraint(equalToConstant: size/3.2).isActive = true
+        skillsView2.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 10).isActive = true
+        skillsView2.leftAnchor.constraint(equalTo: skillsView1.rightAnchor, constant: 10).isActive = true
+        skillsView2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
+
+        skillsView3.widthAnchor.constraint(equalToConstant: size/3.2).isActive = true
+        skillsView3.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 10).isActive = true
+        skillsView3.leftAnchor.constraint(equalTo: skillsView2.rightAnchor, constant: 10).isActive = true
+        skillsView3.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
+        skillLabel1.leftAnchor.constraint(equalTo: skillsView1.leftAnchor).isActive = true
+        skillLabel1.rightAnchor.constraint(equalTo: skillsView1.rightAnchor).isActive = true
+        skillLabel1.topAnchor.constraint(equalTo: skillsView1.topAnchor).isActive = true
+        skillLabel1.bottomAnchor.constraint(equalTo: skillsView1.bottomAnchor).isActive = true
+
+        skillLabel2.leftAnchor.constraint(equalTo: skillsView2.leftAnchor).isActive = true
+        skillLabel2.rightAnchor.constraint(equalTo: skillsView2.rightAnchor).isActive = true
+        skillLabel2.topAnchor.constraint(equalTo: skillsView2.topAnchor).isActive = true
+        skillLabel2.bottomAnchor.constraint(equalTo: skillsView2.bottomAnchor).isActive = true
+
+        skillLabel3.leftAnchor.constraint(equalTo: skillsView3.leftAnchor).isActive = true
+        skillLabel3.rightAnchor.constraint(equalTo: skillsView3.rightAnchor).isActive = true
+        skillLabel3.topAnchor.constraint(equalTo: skillsView3.topAnchor).isActive = true
+        skillLabel3.bottomAnchor.constraint(equalTo: skillsView3.bottomAnchor).isActive = true
     }
     
     

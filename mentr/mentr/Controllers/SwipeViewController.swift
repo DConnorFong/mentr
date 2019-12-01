@@ -10,9 +10,10 @@ import UIKit
 
 class SwipeViewController: UIViewController {
     var personDataArray: [Person] = [
-        Person(id: "1", name: "Wren", animoji: UIImage(named: "head-1")!, major: majors.cpen, university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin"),
-        Person(id: "2", name: "Alan", animoji: UIImage(named: "head-1")!, major: majors.cpen, university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin"),
-        Person(id: "3", name: "Stephanie", animoji: UIImage(named: "head-1")!, major: majors.cpen, university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin")]
+        Person(id: "1", name: "Wren", animoji: UIImage(named: "head-1")!, major: majors.cpen, faculty: "Engineering", university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin"),
+        Person(id: "2", name: "Alan", animoji: UIImage(named: "email")!, major: majors.cpen, faculty: "Engineering", university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin"),
+        Person(id: "3", name: "Stephanie", animoji: UIImage(named: "wechat")!, major: majors.cpen, faculty: "Engineering", university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin"),
+        Person(id: "1", name: "Connor", animoji: UIImage(named: "head-1")!, major: majors.cpen, faculty: "Engineering", university: "UBC", skills: ["A", "B", "C"], bio: "Hello", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin")]
     var myView: SwipeView!
     
     override func loadView() {
@@ -49,7 +50,7 @@ extension SwipeViewController: SwipeCardDataSource {
     
     func cardAt(index: Int) -> CardView {
         let card = CardView()
-        card.personData = personDataArray[index]
+        card.dataSource = personDataArray[index]
         return card
     }
     

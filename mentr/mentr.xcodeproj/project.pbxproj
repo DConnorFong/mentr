@@ -23,6 +23,7 @@
 		6C84A7642392F7930000F583 /* MentorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7632392F7930000F583 /* MentorListViewController.swift */; };
 		6C84A7662392F9740000F583 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7652392F9740000F583 /* NavigationController.swift */; };
 		6C84A7682392FEAD0000F583 /* StackWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7672392FEAD0000F583 /* StackWrapperView.swift */; };
+		6C84A76A239331240000F583 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A769239331240000F583 /* Colors.swift */; };
 		90E9CE3B2392FB1A00A6A843 /* MentorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		6C84A7632392F7930000F583 /* MentorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorListViewController.swift; sourceTree = "<group>"; };
 		6C84A7652392F9740000F583 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		6C84A7672392FEAD0000F583 /* StackWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackWrapperView.swift; sourceTree = "<group>"; };
+		6C84A769239331240000F583 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				6C84A7552392F6EE0000F583 /* Person.swift */,
+				6C84A769239331240000F583 /* Colors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				6C84A75E2392F7490000F583 /* DetailMentorView.swift in Sources */,
 				6C84A75A2392F7230000F583 /* MentorListTableViewCell.swift in Sources */,
 				6C84A7662392F9740000F583 /* NavigationController.swift in Sources */,
+				6C84A76A239331240000F583 /* Colors.swift in Sources */,
 				6C84A7622392F7810000F583 /* DetailMentorViewController.swift in Sources */,
 				6C84A7642392F7930000F583 /* MentorListViewController.swift in Sources */,
 				6C84A7682392FEAD0000F583 /* StackWrapperView.swift in Sources */,
