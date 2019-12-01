@@ -99,17 +99,22 @@ class CardView: UIView {
     
     var delegate: SwipeCardsDelegate?
     
-    var dataSource: Person? {
+    var dataSource: ServerPerson? {
         didSet {
             print("didset datasource")
-            imageView.image = dataSource?.animoji
+            //imageView.image = dataSource?.animoji
+            
+            if let dataSource = dataSource {
+                 nameLabel.text = dataSource.firstName + " " + dataSource.lastName
+                 //facultyLabel.text = dataSource?.faculty
+                 //schoolLabel.text = dataSource?.university
+                 skillLabel1.text = dataSource.interests[0]
+                 skillLabel2.text = dataSource.interests[1]
+                 skillLabel3.text = dataSource.interests[2]
+            }
+            let fullName = "\(dataSource?.firstName)" + "\(dataSource)"
 
-            nameLabel.text = dataSource?.name
-            facultyLabel.text = dataSource?.faculty
-            schoolLabel.text = dataSource?.university
-            skillLabel1.text = dataSource?.skills[0]
-            skillLabel2.text = dataSource?.skills[1]
-            skillLabel3.text = dataSource?.skills[2]
+            
         }
     }
     

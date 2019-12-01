@@ -10,6 +10,9 @@ import UIKit
 
 class RootTabBarController: UITabBarController {
     var ourTabBar: UITabBar!
+    
+    var updateDelegate: ServerUpdateDataDelegate?
+    
     var apiButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 100))
         button.backgroundColor = .red
@@ -48,6 +51,7 @@ class RootTabBarController: UITabBarController {
         let tabBarList = [firstViewController, secondViewController, thirdViewController]
         viewControllers = tabBarList
         
+        self.updateDelegate = firstViewController
         
         initializeStructs()
     }
@@ -58,16 +62,22 @@ class RootTabBarController: UITabBarController {
     }
     
     @objc func testAPICall() {
-        let url = URL(string: "http://ec2-18-222-96-240.us-east-2.compute.amazonaws.com/user/batch/0/150")!
+        let url = URL(string: "http://ec2-18-222-96-240.us-east-2.compute.amazonaws.com/user/batch/0/10")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print(error)
             } else if let inData = data {
-                let json = try? JSONSerialization.jsonObject(with: inData, options: [])
-                print(json)
+                let decodedData = try? JSONDecoder().decode(People.self, from: inData)
+                
+                globalArray = decodedData!
+                print(decodedData)
+                DispatchQueue.main.async {
+                    self.updateDelegate?.updateData()
+                }
             }
         }
         task.resume()
+        
         
     }
 
