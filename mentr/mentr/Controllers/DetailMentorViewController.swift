@@ -24,7 +24,8 @@ class DetailMentorViewController: UIViewController {
 //        newView.skillLabel2.text = "Java"
 //        newView.skillLabel3.text = "App Dev"
         
-        newView.personImage.image = UIImage(named: "mentr\(mentor!.id % 10 + 1)")
+        let number = mentor!.id % 10 + 1
+        newView.personImage.image = UIImage(named: "mentr\(number)")
         newView.nameLabel.text = "\(mentor!.firstName) \(mentor!.lastName)"
         newView.facultyLabel.text = "\(mentor!.faculty)"
         newView.schoolLabel.text = "\(mentor!.university)"

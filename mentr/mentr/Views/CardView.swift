@@ -13,6 +13,8 @@ import UIKit
 
 class CardView: UIView {
     //MARK: - Subviews
+    let colors = Colors()
+    var count = 0
     lazy var imageView: UIImageView = {
         let imageView = UIImageView(frame: self.frame)
         imageView.image = nil
@@ -118,6 +120,9 @@ class CardView: UIView {
                  skillLabel1.text = dataSource.interests[0]
                  skillLabel2.text = dataSource.interests[1]
                  skillLabel3.text = dataSource.interests[2]
+                let number = dataSource.id%10 + 1
+    
+                imageView.image = UIImage(named: "mentr\(number)")
             }
             let fullName = "\(dataSource?.firstName)" + "\(dataSource)"
 
@@ -138,8 +143,19 @@ class CardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     func layoutView() {
-        backgroundColor = .white
-        
+        if count == 0 {
+            backgroundColor = colors.colorMap["green"]
+        } else if count == 1 {
+            backgroundColor = colors.colorMap["orange"]
+        } else if count == 2 {
+            backgroundColor = colors.colorMap["green"]
+        } else {
+            backgroundColor = colors.colorMap["orange"]
+        }
+        count += 1
+        if count == 4 {
+            count = 0
+        }
         self.addSubview(imageView)
         self.addSubview(descriptionView)
         

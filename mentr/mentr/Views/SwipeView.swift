@@ -28,9 +28,7 @@ class SwipeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     func layoutView() {
-        let colors = Colors()
-        backgroundColor = colors.colorMap["green"]
-        
+        backgroundColor = .white
         addSubview(stackView)
         
         setupConstraints()
