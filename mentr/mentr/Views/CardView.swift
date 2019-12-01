@@ -62,21 +62,21 @@ class CardView: UIView {
     lazy var skillsView1: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor(displayP3Red: 245/255, green: 157/255, blue: 63/255, alpha: 0.55)
         view.layer.cornerRadius = 10
         return view
     }()
     lazy var skillsView2: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .yellow
+        view.backgroundColor = UIColor(displayP3Red: 139/255, green: 182/255, blue: 243/255, alpha: 0.55)
         view.layer.cornerRadius = 10
         return view
     }()
     lazy var skillsView3: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .green
+        view.backgroundColor = UIColor(displayP3Red: 206/255, green: 179/255, blue: 241/255, alpha: 0.55)
         view.layer.cornerRadius = 10
         return view
     }()
