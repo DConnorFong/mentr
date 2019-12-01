@@ -106,21 +106,25 @@ class CardView: UIView {
     
     var delegate: SwipeCardsDelegate?
     
+    var modalDelegate: ModalDelegate?
+    
     var dataSource: ServerPerson? {
         didSet {
             print("didset datasource")
             //imageView.image = dataSource?.animoji
             
             if let dataSource = dataSource {
-                 nameLabel.text = dataSource.firstName + " " + dataSource.lastName
-                 //facultyLabel.text = dataSource?.faculty
-                 //schoolLabel.text = dataSource?.university
-                 skillLabel1.text = dataSource.interests[0]
-                 skillLabel2.text = dataSource.interests[1]
-                 skillLabel3.text = dataSource.interests[2]
+                nameLabel.text = dataSource.firstName + " " + dataSource.lastName
+                
+                facultyLabel.text = dataSource.faculty.rawValue
+                schoolLabel.text = dataSource.university.rawValue
+                
+                skillLabel1.text = dataSource.interests[0]
+                skillLabel2.text = dataSource.interests[1]
+                skillLabel3.text = dataSource.interests[2]
+                
             }
-            let fullName = "\(dataSource?.firstName)" + "\(dataSource)"
-
+            
             
         }
     }
@@ -268,6 +272,10 @@ class CardView: UIView {
                         card.center = CGPoint(x: centerOfParentContainer.x + point.x + 200, y: centerOfParentContainer.y + point.y + 75)
                      card.alpha = 0
                      self.layoutIfNeeded()
+                     let modalView = ModalPopUpViewController()
+                        modalView.selectedPerson = self.dataSource
+                        
+                        
                 }
                     
                 //swiped past left threshold
