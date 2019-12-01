@@ -24,11 +24,23 @@ class SwipeView: UIView {
     }()
     
     lazy var leftArrow: UIImageView = {
-        let view = UIImageView()
-        
-        
-        return view
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "right-arrow")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
+    
+    lazy var rightArrow: UIImageView = {
+       let imageView = UIImageView()
+       imageView.translatesAutoresizingMaskIntoConstraints = false
+       imageView.image = UIImage(named: "left-arrow")
+       imageView.contentMode = .scaleAspectFit
+       imageView.translatesAutoresizingMaskIntoConstraints = false
+       return imageView
+   }()
+
 
     override class var requiresConstraintBasedLayout: Bool {
       return true
@@ -45,6 +57,8 @@ class SwipeView: UIView {
         backgroundColor = .white
         addSubview(stackView)
         addSubview(headerLabel)
+        addSubview(leftArrow)
+        addSubview(rightArrow)
         
         setupConstraints()
     }
@@ -57,6 +71,17 @@ class SwipeView: UIView {
         
         headerLabel.leftAnchor.constraint(equalTo: leftAnchor, constant:30).isActive = true
         headerLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant:40).isActive = true
+        
+        leftArrow.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        leftArrow.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        leftArrow.leftAnchor.constraint(equalTo: leftAnchor, constant:40).isActive = true
+        leftArrow.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant:-20).isActive = true
+        
+        rightArrow.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        rightArrow.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        rightArrow.rightAnchor.constraint(equalTo: rightAnchor, constant:-40).isActive = true
+        rightArrow.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant:-20).isActive = true
+        
 
     }
 }

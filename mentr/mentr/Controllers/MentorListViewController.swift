@@ -30,7 +30,7 @@ class MentorListViewController: UIViewController {
         self.view = newView
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "MentR Matches"
+        navigationItem.title = "Mentr Matches"
         tableView.dataSource = self
         tableView.delegate = self
         
