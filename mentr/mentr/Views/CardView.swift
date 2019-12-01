@@ -42,7 +42,14 @@ class CardView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+    lazy var bioLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Futura", size: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "My name is Wren Liang and I am from calgary alberta la da da da da d ad a da da ad  a"
+        label.numberOfLines = 7
+        return label
+    }()
     lazy var descriptionView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -138,6 +145,7 @@ class CardView: UIView {
         
         descriptionView.addSubview(nameLabel)
         descriptionView.addSubview(schoolLabel)
+        descriptionView.addSubview(bioLabel)
         descriptionView.addSubview(facultyLabel)
         descriptionView.addSubview(skillsView1)
         descriptionView.addSubview(skillsView2)
@@ -160,7 +168,7 @@ class CardView: UIView {
         
         //Children Setup
         imageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        //imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         imageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
@@ -180,7 +188,7 @@ class CardView: UIView {
         schoolLabel.topAnchor.constraint(equalTo: facultyLabel.bottomAnchor, constant: 10).isActive = true
         schoolLabel.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
 
-        let size: CGFloat = 200
+        let size: CGFloat = 300
         skillsView1.widthAnchor.constraint(equalToConstant: size/3.2).isActive = true
         skillsView1.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 10).isActive = true
         skillsView1.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
@@ -211,6 +219,11 @@ class CardView: UIView {
         skillLabel3.rightAnchor.constraint(equalTo: skillsView3.rightAnchor).isActive = true
         skillLabel3.topAnchor.constraint(equalTo: skillsView3.topAnchor).isActive = true
         skillLabel3.bottomAnchor.constraint(equalTo: skillsView3.bottomAnchor).isActive = true
+        
+        bioLabel.topAnchor.constraint(equalTo: skillsView1.bottomAnchor, constant: 10).isActive = true
+        bioLabel.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive =  true
+        bioLabel.rightAnchor.constraint(equalTo: descriptionView.rightAnchor, constant: -10).isActive =  true
+
 
     }
     
