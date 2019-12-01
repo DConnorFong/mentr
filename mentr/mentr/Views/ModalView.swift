@@ -13,7 +13,7 @@ class ModalView: UIView {
          let label = UILabel()
          label.font = UIFont(name: "Futura-Bold", size: 30)
          label.text = "You've Been Matched!"
-        label.textAlignment = .center
+         label.textAlignment = .center
          label.translatesAutoresizingMaskIntoConstraints = false
          return label
      }()
@@ -36,7 +36,7 @@ class ModalView: UIView {
     }()
     lazy var doneButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .green
+        button.backgroundColor = UIColor(displayP3Red: 234/255, green: 249/255, blue: 230/255, alpha: 1)
         button.layer.cornerRadius = 40
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "checkmark"), for: .normal)

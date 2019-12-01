@@ -71,7 +71,7 @@ class RootTabBarController: UITabBarController {
         apiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         apiButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
         apiButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        apiButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90).isActive = true
+        apiButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -110).isActive = true
 
     }
     
