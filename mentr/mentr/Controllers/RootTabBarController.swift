@@ -9,7 +9,7 @@
 import UIKit
 
 class RootTabBarController: UITabBarController {
-
+    var ourTabBar: UITabBar!
     var apiButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 100))
         button.backgroundColor = .red
@@ -22,21 +22,30 @@ class RootTabBarController: UITabBarController {
         view.addSubview(apiButton)
         //Testing
         self.view.backgroundColor = UIColor.green
-        
         //MARK: Tabbed Views
+        tabBar.barStyle = .black
         let firstViewController = SwipeViewController()
-        firstViewController.tabBarItem = UITabBarItem()
-        firstViewController.tabBarItem.title = "SwipeView"
+        var tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "swipe"), selectedImage: UIImage(named: "swipe"))
+        tabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+        firstViewController.tabBarItem = tabBarItem
         firstViewController.tabBarItem.tag = 0
-        firstViewController.tabBarItem.image = UIImage(systemName: "tray.2")
+        
+        
+        tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "list"), selectedImage: UIImage(named: "list"))
+        tabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
         
         let secondViewController = NavigationController(rootViewController: MentorListViewController())
-        secondViewController.tabBarItem = UITabBarItem()
-        secondViewController.tabBarItem.title = "Mentor List"
+        secondViewController.tabBarItem = tabBarItem
         secondViewController.tabBarItem.tag = 1
-        secondViewController.tabBarItem.image = UIImage(systemName: "book")
         
-        let tabBarList = [firstViewController, secondViewController]
+        
+        let thirdViewController = SettingsViewController()
+        tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "settings"), selectedImage: UIImage(named: "settings"))
+        tabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+        thirdViewController.tabBarItem = tabBarItem
+        thirdViewController.tabBarItem.tag = 2
+        
+        let tabBarList = [firstViewController, secondViewController, thirdViewController]
         viewControllers = tabBarList
         
         

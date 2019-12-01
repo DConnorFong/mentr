@@ -24,6 +24,8 @@
 		6C84A7662392F9740000F583 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7652392F9740000F583 /* NavigationController.swift */; };
 		6C84A7682392FEAD0000F583 /* StackWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84A7672392FEAD0000F583 /* StackWrapperView.swift */; };
 		90E9CE3B2392FB1A00A6A843 /* MentorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */; };
+		90E9CE3F2393381100A6A843 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9CE3E2393381100A6A843 /* SettingsViewController.swift */; };
+		90E9CE412393381C00A6A843 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9CE402393381C00A6A843 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		6C84A7652392F9740000F583 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		6C84A7672392FEAD0000F583 /* StackWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackWrapperView.swift; sourceTree = "<group>"; };
 		90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorListView.swift; sourceTree = "<group>"; };
+		90E9CE3E2393381100A6A843 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		90E9CE402393381C00A6A843 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 				90E9CE3A2392FB1A00A6A843 /* MentorListView.swift */,
 				6C84A7592392F7230000F583 /* MentorListTableViewCell.swift */,
 				6C84A75D2392F7490000F583 /* DetailMentorView.swift */,
+				90E9CE402393381C00A6A843 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				6C84A75F2392F7620000F583 /* MatchViewController.swift */,
 				6C84A7612392F7810000F583 /* DetailMentorViewController.swift */,
 				6C84A7632392F7930000F583 /* MentorListViewController.swift */,
+				90E9CE3E2393381100A6A843 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,8 +205,10 @@
 				6C84A7412392F48F0000F583 /* RootTabBarController.swift in Sources */,
 				6C84A7582392F7140000F583 /* SwipeView.swift in Sources */,
 				6C84A7602392F7620000F583 /* MatchViewController.swift in Sources */,
+				90E9CE412393381C00A6A843 /* SettingsView.swift in Sources */,
 				6C84A73D2392F48F0000F583 /* AppDelegate.swift in Sources */,
 				6C84A75E2392F7490000F583 /* DetailMentorView.swift in Sources */,
+				90E9CE3F2393381100A6A843 /* SettingsViewController.swift in Sources */,
 				6C84A75A2392F7230000F583 /* MentorListTableViewCell.swift in Sources */,
 				6C84A7662392F9740000F583 /* NavigationController.swift in Sources */,
 				6C84A7622392F7810000F583 /* DetailMentorViewController.swift in Sources */,
