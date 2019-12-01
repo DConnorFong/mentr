@@ -129,6 +129,8 @@ class CardView: UIView {
                 let number = dataSource.id%10 + 1
     
                 imageView.image = UIImage(named: "mentr\(number)")
+                
+                bioLabel.text = dataSource.bio
             }
             
             
