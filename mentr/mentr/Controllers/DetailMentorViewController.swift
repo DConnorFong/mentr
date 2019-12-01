@@ -15,7 +15,8 @@ class DetailMentorViewController: UIViewController {
         super.viewDidLoad()
         let newView = DetailMentorView()
         newView.backgroundColor = color
-        
+        self.navigationItem.hidesBackButton = true
+
         let number = mentor!.id % 10 + 1
         newView.personImage.image = UIImage(named: "mentr\(number)")
         newView.nameLabel.text = "\(mentor!.firstName) \(mentor!.lastName)"

@@ -17,7 +17,6 @@ class RootTabBarController: UITabBarController {
     
     var apiButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .gray
         button.layer.cornerRadius = 30
         button.addTarget(self, action: #selector(testAPICall), for: .touchUpInside)
         button.setImage(UIImage(named: "refresh"), for: .normal)
@@ -73,7 +72,7 @@ class RootTabBarController: UITabBarController {
     
     //use to populate colors or person
     private func constraintLayout() {
-        apiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        apiButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
         apiButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         apiButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         apiButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true

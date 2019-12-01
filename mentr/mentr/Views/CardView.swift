@@ -151,15 +151,8 @@ class CardView: UIView {
     }
     func layoutView() {
         count = Int.random(in: 0...3)
-        if count == 0 {
-            backgroundColor = colors.colorMap["green"]
-        } else if count == 1 {
-            backgroundColor = colors.colorMap["orange"]
-        } else if count == 2 {
-            backgroundColor = colors.colorMap["green"]
-        } else {
-            backgroundColor = colors.colorMap["orange"]
-        }
+        backgroundColor = colors.colours[count]
+    
         self.addSubview(imageView)
         self.addSubview(descriptionView)
         
