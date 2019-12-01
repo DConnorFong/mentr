@@ -93,7 +93,7 @@ class CardView: UIView {
         label.textAlignment = .center
         return label
     }()
-    
+
     
     var divisor: CGFloat = 0.0
     
@@ -155,7 +155,7 @@ class CardView: UIView {
         
         //Children Setup
         imageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        //imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         imageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
@@ -175,7 +175,7 @@ class CardView: UIView {
         schoolLabel.topAnchor.constraint(equalTo: facultyLabel.bottomAnchor, constant: 10).isActive = true
         schoolLabel.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
 
-        let size: CGFloat = 300
+        let size: CGFloat = 200
         skillsView1.widthAnchor.constraint(equalToConstant: size/3.2).isActive = true
         skillsView1.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 10).isActive = true
         skillsView1.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
@@ -206,6 +206,7 @@ class CardView: UIView {
         skillLabel3.rightAnchor.constraint(equalTo: skillsView3.rightAnchor).isActive = true
         skillLabel3.topAnchor.constraint(equalTo: skillsView3.topAnchor).isActive = true
         skillLabel3.bottomAnchor.constraint(equalTo: skillsView3.bottomAnchor).isActive = true
+
     }
     
     
@@ -241,8 +242,9 @@ class CardView: UIView {
         switch sender.state {
             // --- Case: gesture ended --- //
             case .ended:
-                //swiped past horizontal threshold
-                if (card.center.x) > 200 {
+                //swiped past right threshold
+                if (card.center.x) > 40 {
+                    print("right")
                     delegate?.swipeDidEnd(view: card)
                     UIView.animate(withDuration: 0.2) {
                         card.center = CGPoint(x: centerOfParentContainer.x + point.x + 200, y: centerOfParentContainer.y + point.y + 75)
@@ -250,10 +252,11 @@ class CardView: UIView {
                      self.layoutIfNeeded()
                 }
                     
-                //swiped past vertical threshold
+                //swiped past left threshold
                 } else if card.center.x < -40 {
-                delegate?.swipeDidEnd(view: card)
-                UIView.animate(withDuration: 0.2) {
+                    print("left")
+                    delegate?.swipeDidEnd(view: card)
+                    UIView.animate(withDuration: 0.2) {
                      card.center = CGPoint(x: centerOfParentContainer.x + point.x - 200, y: centerOfParentContainer.y + point.y + 75)
                      card.alpha = 0
                      self.layoutIfNeeded()
