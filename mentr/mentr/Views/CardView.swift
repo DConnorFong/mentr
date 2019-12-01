@@ -148,6 +148,7 @@ class CardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     func layoutView() {
+        count = Int.random(in: 0...3)
         if count == 0 {
             backgroundColor = colors.colorMap["green"]
         } else if count == 1 {
@@ -156,10 +157,6 @@ class CardView: UIView {
             backgroundColor = colors.colorMap["green"]
         } else {
             backgroundColor = colors.colorMap["orange"]
-        }
-        count += 1
-        if count == 4 {
-            count = 0
         }
         self.addSubview(imageView)
         self.addSubview(descriptionView)
