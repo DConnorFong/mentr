@@ -108,6 +108,12 @@ class CardView: UIView {
     
     var delegate: SwipeCardsDelegate?
     
+    var modalDelegate: ModalDelegate? {
+        didSet {
+            print("hello parent")
+        }
+    }
+    
     var dataSource: ServerPerson? {
         didSet {
             print("didset datasource")
@@ -124,8 +130,7 @@ class CardView: UIView {
     
                 imageView.image = UIImage(named: "mentr\(number)")
             }
-            let fullName = "\(dataSource?.firstName)" + "\(dataSource)"
-
+            
             
         }
     }
@@ -284,6 +289,12 @@ class CardView: UIView {
                         card.center = CGPoint(x: centerOfParentContainer.x + point.x + 200, y: centerOfParentContainer.y + point.y + 75)
                      card.alpha = 0
                      self.layoutIfNeeded()
+                        
+                        if let person = self.dataSource {
+                            self.modalDelegate?.sendPerson(person: person)
+                        }
+                     
+                        
                 }
                     
                 //swiped past left threshold

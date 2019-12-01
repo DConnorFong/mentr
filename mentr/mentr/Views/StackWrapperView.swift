@@ -27,6 +27,8 @@ class StackWrapperView: UIView {
          }
     }
     
+    var modalDelegate: ModalDelegate?
+    
     private func reloadData() {
         removeAllCardViews()
         guard let swipeDataSource = swipeDataSource else {return}
@@ -45,6 +47,11 @@ class StackWrapperView: UIView {
     
     private func addCardView(card: CardView, index: Int) {
         card.delegate = self
+        
+        if let modal = modalDelegate {
+            card.modalDelegate = modal
+        }
+
         addCardFrame(index: index, cardView: card)
         viewsOnStack.append(card)
         insertSubview(card, at: 0)

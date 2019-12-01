@@ -10,6 +10,8 @@ import UIKit
 
 var globalArray: People = []
 
+var addedPeople: People = [] 
+
 class SwipeViewController: UIViewController {
     var personDataArray: [Person] = [
         Person(id: "1", name: "Wren Liang", animoji: UIImage(named: "head-1")!, major: majors.cpen, faculty: "Engineering", university: "UBC", skills: ["A", "B", "C"], bio: "Hello my name is Wren. I love to program in Swift and play basketball!", facebook: "wrenl", email: "wrenl@x.com", phoneNum: "123123", wechat: "wechat", linkedin: "linkedin"),
@@ -20,6 +22,7 @@ class SwipeViewController: UIViewController {
     var serverDataArray: People? {
         didSet {
             myView.stackView.swipeDataSource = self
+            myView.stackView.modalDelegate = self
         }
     }
     var myView: SwipeView!
@@ -78,5 +81,20 @@ extension SwipeViewController: ServerUpdateDataDelegate {
     func updateData() {
         print("hello")
         self.serverDataArray = globalArray
+    }
+}
+
+
+protocol ModalDelegate {
+    func sendPerson(person: ServerPerson)
+}
+
+extension SwipeViewController: ModalDelegate {
+    func sendPerson(person: ServerPerson) {
+        print("sending person")
+        let modalView = ModalPopUpViewController()
+        modalView.selectedPerson = person
+        
+        self.present(modalView, animated: true)
     }
 }
