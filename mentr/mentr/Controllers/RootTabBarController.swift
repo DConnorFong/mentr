@@ -29,6 +29,8 @@ class RootTabBarController: UITabBarController {
     }()
     override func viewWillAppear(_ animated: Bool) {
         self.selectedIndex = 2
+        apiButton.isEnabled = true
+        apiButton.isHidden = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
