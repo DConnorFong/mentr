@@ -9,20 +9,34 @@
 import UIKit
 
 class DetailMentorViewController: UIViewController {
-    var mentor: Person?
+    var mentor: ServerPerson?
     var color: UIColor?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let newView = DetailMentorView()
         newView.backgroundColor = color
-        newView.personImage.image = UIImage(named: "head-1") //CHNAGE THIS TO PERSON LATER
-        newView.nameLabel.text = "Alan Yan"
-        newView.facultyLabel.text = "Computer Engineering"
-        newView.schoolLabel.text = "University of British Columbia"
+//        newView.personImage.image = UIImage(named: "head-1") //CHNAGE THIS TO PERSON LATER
+//        newView.nameLabel.text = "Alan Yan"
+//        newView.facultyLabel.text = "Computer Engineering"
+//        newView.schoolLabel.text = "University of British Columbia"
+//        self.view = newView
+//        newView.skillLabel1.text = "Swift/iOS"
+//        newView.skillLabel2.text = "Java"
+//        newView.skillLabel3.text = "App Dev"
+        
+        newView.personImage.image = UIImage(named: "mentr\(mentor!.id % 10 + 1)")
+        newView.nameLabel.text = "\(mentor!.firstName) \(mentor!.lastName)"
+        newView.facultyLabel.text = "\(mentor!.faculty)"
+        newView.schoolLabel.text = "\(mentor!.university)"
+        newView.skillLabel1.text = mentor!.interests[0]
+        newView.skillLabel2.text = mentor!.interests[1]
+        newView.skillLabel3.text = mentor!.interests[2]
+        newView.facebookButton.addTarget(self, action: #selector(clickedFacebook), for: .touchUpInside)
         self.view = newView
-        newView.skillLabel1.text = "Swift/iOS"
-        newView.skillLabel2.text = "Java"
-        newView.skillLabel3.text = "App Dev"
+        
+    }
+    
+    @objc func clickedFacebook() {
+        
     }
 }
