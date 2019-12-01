@@ -161,7 +161,7 @@ class CardView: UIView {
         
         
         //From Alan
-        descriptionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        descriptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
         descriptionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         descriptionView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         descriptionView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
