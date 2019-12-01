@@ -57,6 +57,9 @@ const interest = [
 
 const faculty = ['Arts', 'Commerce', 'Engineering', 'Forestry', 'Land and Food Systems', 'Science'];
 
+// Demo related
+// const faculty = ['Engineering'];
+
 const major = [
     'Biomedical Engineering',
     'Chemical Engineering',
@@ -109,6 +112,7 @@ const generateMentrData = (startIndex, count) => {
         curr.bio = `${Faker.random.arrayElement(greeting)} I am ${curr.firstName}, I study ${curr.faculty} at ${
             curr.university
         }.`;
+        curr.matched = Faker.random.boolean();
 
         data.push(curr);
     }

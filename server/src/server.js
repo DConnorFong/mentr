@@ -17,6 +17,8 @@ for (i = 0; i < mentors.length; i++) {
     }
 }
 
+// console.log(generateMentrData(1, 24));
+
 console.log(`Mentor dataset validated: ${valid}`);
 
 module.exports = app;
