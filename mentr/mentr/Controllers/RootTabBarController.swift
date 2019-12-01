@@ -49,6 +49,11 @@ class RootTabBarController: UITabBarController {
         viewControllers = tabBarList
         
         
+        initializeStructs()
+    }
+    
+    //use to populate colors or person
+    private func initializeStructs() {
         
     }
     

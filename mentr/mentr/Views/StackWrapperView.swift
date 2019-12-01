@@ -28,9 +28,12 @@ class StackWrapperView: UIView {
     }
     
     private func reloadData() {
+        removeAllCardViews()
         guard let swipeDataSource = swipeDataSource else {return}
         numCardsToShow = swipeDataSource.numberOfCardsToShow()
         remainingCards = numCardsToShow
+        
+        print("reloading data")
         
         setNeedsLayout()
         layoutIfNeeded()
@@ -48,7 +51,7 @@ class StackWrapperView: UIView {
         remainingCards -= 1
     }
     
-    func addCardFrame(index: Int, cardView: CardView) {
+    private func addCardFrame(index: Int, cardView: CardView) {
         var cardViewFrame = bounds
         let horizontalInset = (CGFloat(index) * self.horizontalInset)
         let verticalInset = CGFloat(index) * self.verticalInset
@@ -58,6 +61,13 @@ class StackWrapperView: UIView {
         cardViewFrame.origin.y += verticalInset
         
         cardView.frame = cardViewFrame
+    }
+    
+    private func removeAllCardViews() {
+        for cardView in visibleCards {
+            cardView.removeFromSuperview()
+        }
+        viewsOnStack = []
     }
     
     override class var requiresConstraintBasedLayout: Bool {
@@ -76,7 +86,7 @@ class StackWrapperView: UIView {
     
     
     func layoutView() {
-        backgroundColor = .blue
+        backgroundColor = UIColor.clear
 
         setupConstraints()
     }

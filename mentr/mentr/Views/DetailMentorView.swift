@@ -12,7 +12,7 @@ class DetailMentorView: UIView {
     
     lazy var personImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "facebook")
+        imageView.image = UIImage(named: "head-1")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView

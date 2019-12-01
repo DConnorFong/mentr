@@ -11,7 +11,6 @@ import UIKit
 class SwipeView: UIView {
     lazy var stackView: StackWrapperView = {
         let view = StackWrapperView(frame: self.frame)
-        view.backgroundColor = .blue
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -29,7 +28,8 @@ class SwipeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     func layoutView() {
-        backgroundColor = .yellow
+        let colors = Colors()
+        backgroundColor = colors.colorMap["green"]
         
         addSubview(stackView)
         
