@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     var checkedArray: [UIButton] = []
+    var selectedButton: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         let newView = SettingsView()
@@ -37,5 +38,10 @@ class SettingsViewController: UIViewController {
                 sender.isSelected = !sender.isSelected
                 sender.transform = .identity
             }, completion: nil)
+            for x in 0...2 {
+                if(checkedArray[x].isSelected) {
+                    selectedButton = x
+                }
+            }
     }
 }

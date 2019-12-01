@@ -10,6 +10,8 @@ import UIKit
 
 
 class ModalPopUpViewController: UIViewController {
+    var selectedPerson: ServerPerson?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +21,7 @@ class ModalPopUpViewController: UIViewController {
     }
     
     @objc func closeView() {
+        savedMentors.append(selectedPerson!)
         dismiss(animated: true) {
             print("closed")
         }

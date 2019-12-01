@@ -7,6 +7,8 @@
 //
 
 import UIKit
+var savedMentors: People = []
+
 
 class MentorListViewController: UIViewController {
     var mentors: [Person] = []
