@@ -204,7 +204,7 @@ class DetailMentorView: UIView {
         schoolLabel.topAnchor.constraint(equalTo: facultyLabel.bottomAnchor, constant: 10).isActive = true
         schoolLabel.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
         
-        let size: CGFloat = 300
+        let size: CGFloat = 380
         skillsView1.widthAnchor.constraint(equalToConstant: size/3.2).isActive = true
         skillsView1.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 10).isActive = true
         skillsView1.leftAnchor.constraint(equalTo: descriptionView.leftAnchor, constant: 10).isActive = true
