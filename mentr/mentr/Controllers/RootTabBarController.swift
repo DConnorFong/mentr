@@ -16,11 +16,12 @@ class RootTabBarController: UITabBarController {
     var updateDelegate: ServerUpdateDataDelegate?
     
     var apiButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        button.backgroundColor = .red
+        let button = UIButton()
+        button.backgroundColor = .gray
+        button.layer.cornerRadius = 40
         button.addTarget(self, action: #selector(testAPICall), for: .touchUpInside)
-        button.setTitle("API CALL", for: .normal)
-        
+        button.setImage(UIImage(named: "refresh"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.isHidden = true
         button.isEnabled = false
         
@@ -62,12 +63,16 @@ class RootTabBarController: UITabBarController {
         self.updateDelegate = firstViewController
         
         
-        initializeStructs()
+        constraintLayout()
     }
     
     //use to populate colors or person
-    private func initializeStructs() {
-        
+    private func constraintLayout() {
+        apiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        apiButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        apiButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        apiButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90).isActive = true
+
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
