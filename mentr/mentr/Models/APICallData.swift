@@ -18,6 +18,7 @@ struct ServerPerson: Codable {
     let email, phone, facebook: String
     let interests: [String]
     let bio: String
+    let matched: Bool
 }
 
 enum Faculty: String, Codable {

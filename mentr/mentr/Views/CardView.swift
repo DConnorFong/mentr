@@ -288,7 +288,9 @@ class CardView: UIView {
                      self.layoutIfNeeded()
                         
                         if let person = self.dataSource {
-                            self.modalDelegate?.sendPerson(person: person)
+                            if person.matched == true {
+                                self.modalDelegate?.sendPerson(person: person)
+                            }
                         }
                      
                         

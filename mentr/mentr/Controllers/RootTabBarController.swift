@@ -11,13 +11,19 @@ import UIKit
 class RootTabBarController: UITabBarController {
     var ourTabBar: UITabBar!
     
+    var settingsController: SettingsViewController!
+    
     var updateDelegate: ServerUpdateDataDelegate?
     
     var apiButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 100))
+        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
         button.backgroundColor = .red
         button.addTarget(self, action: #selector(testAPICall), for: .touchUpInside)
         button.setTitle("API CALL", for: .normal)
+        
+        button.isHidden = true
+        button.isEnabled = false
+        
         return button
     }()
     override func viewDidLoad() {
@@ -48,10 +54,13 @@ class RootTabBarController: UITabBarController {
         thirdViewController.tabBarItem = tabBarItem
         thirdViewController.tabBarItem.tag = 2
         
+        self.settingsController = thirdViewController
+        
         let tabBarList = [firstViewController, secondViewController, thirdViewController]
         viewControllers = tabBarList
         
         self.updateDelegate = firstViewController
+        
         
         initializeStructs()
     }
@@ -61,8 +70,26 @@ class RootTabBarController: UITabBarController {
         
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.tag == 2 {
+            apiButton.isEnabled = true
+            apiButton.isHidden = false
+        } else {
+            apiButton.isEnabled = false
+            apiButton.isHidden = true
+        }
+    }
+    
     @objc func testAPICall() {
-        let url = URL(string: "http://ec2-18-222-96-240.us-east-2.compute.amazonaws.com/user/batch/0/10")!
+        var url: URL!
+        if settingsController.selectedButton == 0 {
+            url = URL(string: "http://ec2-18-222-96-240.us-east-2.compute.amazonaws.com/user/batch/engineering")!
+        } else if settingsController.selectedButton == 1{
+            url = URL(string: "http://ec2-18-222-96-240.us-east-2.compute.amazonaws.com/user/batch/science")!
+        } else {
+            url = URL(string: "http://ec2-18-222-96-240.us-east-2.compute.amazonaws.com/user/batch/commerce")!
+        }
+        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print(error)
