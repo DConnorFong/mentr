@@ -121,8 +121,8 @@ class CardView: UIView {
             
             if let dataSource = dataSource {
                  nameLabel.text = dataSource.firstName + " " + dataSource.lastName
-                 //facultyLabel.text = dataSource?.faculty
-                 //schoolLabel.text = dataSource?.university
+                 facultyLabel.text = dataSource.faculty.rawValue
+                 schoolLabel.text = dataSource.university.rawValue
                  skillLabel1.text = dataSource.interests[0]
                  skillLabel2.text = dataSource.interests[1]
                  skillLabel3.text = dataSource.interests[2]
