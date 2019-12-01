@@ -25,6 +25,7 @@ class DetailMentorViewController: UIViewController {
         newView.skillLabel2.text = mentor!.interests[1]
         newView.skillLabel3.text = mentor!.interests[2]
         newView.facebookButton.addTarget(self, action: #selector(clickedFacebook), for: .touchUpInside)
+        newView.emailButton.addTarget(self, action: #selector(email), for: .touchUpInside)
         self.view = newView
         
     }
@@ -35,7 +36,7 @@ class DetailMentorViewController: UIViewController {
         }
     }
     @objc func email() {
-        if let url = URL(string: "http://\(mentor!.email)") {
+        if let url = URL(string: "mailto:\(mentor!.email)") {
             UIApplication.shared.open(url)
         }
     }
