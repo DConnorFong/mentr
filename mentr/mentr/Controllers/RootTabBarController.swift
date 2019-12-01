@@ -27,6 +27,9 @@ class RootTabBarController: UITabBarController {
         
         return button
     }()
+    override func viewWillAppear(_ animated: Bool) {
+        self.selectedIndex = 2
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(apiButton)
