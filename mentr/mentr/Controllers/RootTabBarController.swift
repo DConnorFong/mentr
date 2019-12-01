@@ -18,7 +18,7 @@ class RootTabBarController: UITabBarController {
     var apiButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .gray
-        button.layer.cornerRadius = 40
+        button.layer.cornerRadius = 30
         button.addTarget(self, action: #selector(testAPICall), for: .touchUpInside)
         button.setImage(UIImage(named: "refresh"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -29,6 +29,8 @@ class RootTabBarController: UITabBarController {
     }()
     override func viewWillAppear(_ animated: Bool) {
         self.selectedIndex = 2
+        apiButton.isEnabled = true
+        apiButton.isHidden = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +74,9 @@ class RootTabBarController: UITabBarController {
     //use to populate colors or person
     private func constraintLayout() {
         apiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        apiButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        apiButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        apiButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -110).isActive = true
+        apiButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        apiButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        apiButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
 
     }
     

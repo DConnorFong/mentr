@@ -19,7 +19,7 @@ class MentorListTableViewCell: UITableViewCell {
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont(name: "Futura-Bold", size: 24)
+        label.font = UIFont(name: "Futura-Bold", size: 20)
         label.text = "Name Here"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -77,11 +77,11 @@ class MentorListTableViewCell: UITableViewCell {
         
         
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 40).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: personImage.rightAnchor, constant: 10).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: personImage.rightAnchor, constant: 0).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
         facultyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10).isActive = true
-        facultyLabel.leftAnchor.constraint(equalTo: personImage.rightAnchor, constant: 10).isActive = true
+        facultyLabel.leftAnchor.constraint(equalTo: personImage.rightAnchor, constant: 0).isActive = true
         facultyLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
     }
